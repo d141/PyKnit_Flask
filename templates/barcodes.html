@@ -6,16 +6,15 @@
 </head>
 <body>
     <div>
-<h3>Our Flask Buttons<h3/>
-    <form method="post" action="/">
-        <input type="submit" value="VALUE1" name="action1"/>
-        <input type="submit" value="VALUE2" name="action2" />
-    </form>
+        <h3>Barcoding</h3>
 
-    <form action="/my-link/">
-        <input type="submit" value="Click me" />
-    </form>
-
+        <form method="POST" action="/barcoding">
+            <label for="skip_reduction">Skip Reduction?</label><br>
+            <input type="checkbox" value="Skip Reduction" id="skip_reduction" name="skip_reduction"/>
+            <label for="start_of_pers">Start of Personalization (0 is automatic)</label><br>
+            <input type="number" value=0 id="start_of_pers" name="start_of_pers" />
+            <input type="submit" value="Run" />
+        </form>
     </div>
 </body>
 </html>

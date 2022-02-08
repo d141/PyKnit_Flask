@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 
 import pyknit_methods as pk
 
-UPLOAD_FOLDER = '/Users/davevananda/PycharmProjects/PyKnit_Flask/uploads'
+UPLOAD_FOLDER = '/Users/davevananda/PycharmProjects/PyKnit_Flask/static/uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
@@ -53,6 +53,11 @@ def upload_file():
 @app.route('/uploads/<name>')
 def download_file(name):
     return send_from_directory(app.config["UPLOAD_FOLDER"], name)
+
+
+@app.route('/barcoding', methods=['POST'])
+def barcode():
+    return render_template("index.html")
 
 
 '''
